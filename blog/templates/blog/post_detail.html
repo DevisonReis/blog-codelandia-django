@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="post-completo">
+        <div class="container-titulo">
+            <h1 class="titulo-post-completo">
+                {{ post.title }}
+            </h1>
+            <p class="data-post-completo">
+                {{ post.created }}
+            </p>
+        </div>
+        <div class="container-post-body">
+            <article class="post-body">
+                {{ post.body }}
+            </article>
+        </div>  
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Codelândia blog{% endblock %}
+
+{% block content %}
+    {% for post in post_list %}
+        <a href="{{ post.get_absolute_url }}">
+            <div class="post">
+                <div class="data"></div>
+                    <p class="data-like-post">
+                       {{ post.created }}
+                    </p>
+                <div class="container-resume-post">
+                    <div class="titulo-post">
+                        <h3 class="titulo">
+                            {{ post.title }}
+                        </h3>
+                    </div>
+                    <p class="resume-post">
+                        {{ post.body }}
+                    </p>
+                </div>  
+            </div>
+        </a>
+    {% endfor %}
+    <div class="btn-proxima-pagina">
+        <a href=""><p class="proxima-pagina">Proxima página</p></a>
+    </div>
+{% endblock %}

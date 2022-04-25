@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="txt-header">
+               <a class="link-home-page" href="{{ post.get_initial_url }}"><h4>Codelândia Blog</h4></a>
+               <div class="novo-post">
+                    <h4>Menu</h4></a>
+                </div>
+            </div>
+            <div class="container-busca">
+                <input type="search" placeholder="Pesquisar no blog" name="busca" id="box-busca">
+                <img class="img-lupa" src="{% static 'imagens/lupa.png' %}" alt="">
+            </div>
+        </div>
+    </header>
+    <main class="corpo">
+            {% block content %}
+            {% endblock %}
+    </main>
+    <footer class="rodape">
+        <div class="info">
+            <a href="https://www.github.com/devisonreis"><img class="social" id="github" src="{% static 'imagens/github.png' %}" alt="github"></a>
+            <a href="https://www.linkedin.com/in/devison-reis/"><img class="social" id="linkedin" src="{% static 'imagens/linkedin.png' %}" alt="linkedin"></a>
+            <a href="mailto:devisonreis@hotmail.com"><img class="social" id="email" src="{% static 'imagens/email.png' %}" alt="email"></a>
+        </div>
+        <div class="container-address">
+            <address class="address">Desenvolvido por: Devison Reis</address>
+        </div>
+    </footer>
+</body>
+</html>
