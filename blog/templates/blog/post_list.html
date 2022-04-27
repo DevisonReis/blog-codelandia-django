@@ -23,7 +23,14 @@
             </div>
         </a>
     {% endfor %}
-    <div class="btn-proxima-pagina">
-        <a href=""><p class="proxima-pagina">Proxima página</p></a>
+
+    <div class="paginacao">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previou_page_number }}">Voltar</a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+        {% endif %}
     </div>
 {% endblock %}
